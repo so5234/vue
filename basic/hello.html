@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定演示</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" id="name" placeholder="你的名字">
+</div>
+<script>
+    let data = {
+        name: "学院君"
+    }
+    document.querySelector('#name').value = data.name;
+</script>
+</body>
+</html>

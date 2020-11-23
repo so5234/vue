@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    Web 编程语言：
+    <ul>
+        <li v-for="(language, index) in languages">
+            {{ index }}: {{ language }}
+        </li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            languages: [
+                'PHP',
+                'JavaScript',
+                'Python',
+                'Golang',
+                'Java'
+            ]
+        },
+    });
+</script>
+</body>
+</html>
