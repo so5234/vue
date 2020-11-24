@@ -9,13 +9,16 @@
 <div id="app">
     Web 编程语言：
     <ul>
-        <li v-for="(language, index) in languages">
-            {{ index }}: {{ language }}
+        <li v-for="(v, index) in languages">
+            {{ index }}: {{ v }}
         </li>
     </ul>
+    <div>
+        <input type="text" v-model="newLanguage" @keyup.enter="addLanguage"/>
+    </div>
 </div>
 <script>
-    new Vue({
+    var app = new Vue({
         el: '#app',
         data: {
             languages: [
@@ -24,8 +27,17 @@
                 'Python',
                 'Golang',
                 'Java'
-            ]
+            ],
+            newLanguage: [
+
+            ],
         },
+        methods: {
+            addLanguage() {
+                this.languages.push(this.newLanguage);
+                this.newLanguage = '';
+            },
+        }
     });
 </script>
 </body>
