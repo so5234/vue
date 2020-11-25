@@ -7,29 +7,22 @@
 </head>
 <body>
 <div id="app">
-    <p> Web 编程语言：</p>
-    <languages></languages>
+    {{a}}
 </div>
 <script>
-    Vue.component('language', {
-        template: '<li><slot></slot></li>'
-    })
-    Vue.component('languages', {
-        data: function () {
-            return {
-                languages: ['PHP', 'JavaScript', 'Golang']
-            }
-        },
-        template: '<ul><language v-for="language in languages">{{ language }}</language></ul>'
-    })
+var data = {a:1}
+var vm = new Vue({
+	el:"#app",
+	data:data
+})
+
+    vm.$watch('a',function(newVal,oldVal){
+		console.log(newVal,oldVal)
+	})
+	
+	vm.$data.a = 11111111;
 
 
-
-
-
-    var app = new Vue({
-        el: '#app',
-    });
 </script>
 </body>
 </html>
