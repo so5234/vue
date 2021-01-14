@@ -10,10 +10,35 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-
-
+<div id="app">
+    <span v-once> Message: {{ msg }}</span>
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    <div v-bind:class="color">2333</div>
+    <p>{{ number + 1 }}</p>
+    <p>{{ ok ? 'YES' : 'NO' }}</p>
+    <p>{{ message.split('').reverse().join('') }}</p>
+    <p v-if="seen">现在你看到我了</p>
+</div>
 </body>
 <script>
-
+    var app = new Vue({
+        el: "#app",
+        data: {
+            msg: 1123,
+            rawHtml: '<span style="color: red"> hjkhk',
+            color: 'red',
+            number: 1,
+            ok:true,
+            message:'asd',
+            seen:true,
+        }
+    })
 </script>
+
+<style>
+    .red {
+        color: red;
+    }
+</style>
 </html>
